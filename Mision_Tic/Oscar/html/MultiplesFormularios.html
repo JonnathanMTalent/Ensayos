@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Boton de Enviar SUBMIT   </p>
+    <form action="../archivo.php" target="_blank">
+        Boton Enviar:
+        <input type="submit" value="Enviar Datos">
+    </form>
+    <p>Campo de texto</p>
+    <hr>
+    <form action="../archivo.php" target="_blank">
+        <p> Ingresa tu nombre:  <input type="text" name="nombrecompleto"></p>
+        <p> Ingresa tus Apellidos:  <input type="text" name="apellidos"></p>
+        <p>Deja tu mensaje: <br></p>
+        <textarea name="mensaje"> </textarea>
+        <p>
+            <input type="submit" value="Enviar Informacion">
+        </p>
+    </form>
+    <hr>
+    <p> Componentes de seleccion -Casillas de verificacion</p>
+    <form action="../archivo.php" target="_blank">
+        <p>
+            selecciona tus intereses: <br>
+            <input type="checkbox" name="peliculas">Peliculas <br>
+            <input type="checkbox" name="deportes">Deportes <br>
+            <input type="checkbox" name="peliculas">Peliculas <br>
+            <input type="checkbox" name="cocina">Peliculas <br>
+            <input type="checkbox" name="videojuegos">cocina <br>
+        </p>
+        <input type="submit" value="Enviar">
+    </form>
+    <hr>
+<p>Botones de Opcion</p>
+<form action="../archivo.php" target="_blank">
+    <> Selecciona el rango de Ingresos: <br>
+    <input type="radio" name="ingresos" value="menos1000">Menos de 1 millon <br>
+    <input type="radio" name="ingresos" value="de1000a1500">Entre 1 millon y 1millon 500 mil <br>
+    <input type="radio" name="ingresos" value="masde1500">Mas de 1millon 500 <br>
+    <input type="submit" value="Enviar">
+</p>
+</form>
+<hr>
+<p>Manejo de listas en los formularios</p>
+<form action="../archivo.php" target="_blank">
+<>
+    Estudios Realizados:
+    <select name="estudios">
+        <option value="Primarios">Primarios</option>
+        <option value="Secundaros">Secundarios</option>
+        <option value="Primarios">Primarios</option>
+        <option value="Profesionales">Profesionales</option>
+        <option value="Especializacion">Especializacion</option>
+    </select>
+    <p> <input type="submit" value="value"></p>
+</form>
+<hr>
+<p> Manejo de listas con Varias selecciones</p>
+<form action="../archivo.php" translate="_blank">
+    <p>
+        Selecciona varias categorias de tu interes:
+        <select multiple name="categorias[]">
+            <option value="arte">Arte y Entretenimiiento</option>
+            <option value="tv">Television y peliculas</option>
+            <option value="infantil">Niños y jovenes</option>
+            <option value="dramatizados">dramatizados</option>
+        </select>
+    </p>
+</form>
+<hr>
+<p> Botones de reinicio</p> 
+<form action="../archivo.php" target="_blank">
+    <p>Enviar mensaje: <input type="text" name="mensaje" value="ya puedes enviar"></p>
+    <p>
+        <input type="radio" name="cuando" value="hoy" checked>hoy <br/>
+        <input type="radio" name="cuando" value="Maniana">Maniana <br/>
+<p>   
+    <p> <input type="checkbox" name="copia" checked> Enviarme una copia <p>
+        <input type="reset" value="Reiniciar">
+        <input type="submit" value="Enviar Mensaje">
+</form>
+<hr>
+<p>Etiquetado de controles</p>
+    <form action="">
+        <p> <label>Nombre: <input type="text" name="nombre"></label></p>
+        <p><fieldset>
+            <legend>Ingrese datos:</legend>
+            Genero
+            <label><input type="radio" name="genero" value="masculino">Masculino</label> <br/>
+            <label><input type="radio" name="genero" value="femenino">Femenino</label> <br/> 
+            <label> cedula<input type="text" name="genero" value="cedula"></label> <br/> 
+        </fieldset>
+        </p>
+        Novedades.
+        <p> <label> <input type="checkbox" name="copia" checked>Me gustaria recibir novedades</label></p>
+        <input type="submint" value="Enviar informacion">
+    </form>
+    <hr>
+    <p>Agrupacion de controles</p><br>
+    <form action="">
+        <fieldset>
+            <legend>Informacion personal</legend>
+            <p> <label>Nombre: <input type="text" name="nombre"></label></p>
+        <p> <label>Nombre: <input type="text" name="nombre"></label></p>
+        <p> <label>Direccion: <input type="text" name="direccion"></label></p>
+        <p> <label>Telefono: <input type="text" name="telefono"></label></p>
+        <p> <label>Edad: <input type="enum" name="edad"></label></p>
+
+        </fieldset>
+        <fieldset>
+            <legend>Preferencias</legend>
+            <p>
+                selecciona tus intereses: <br>
+                <input type="checkbox" name="peliculas">Peliculas <br>
+                <input type="checkbox" name="deportes">Deportes <br>
+                <input type="checkbox" name="peliculas">Peliculas <br>
+                <input type="checkbox" name="cocina">Peliculas <br>
+                <input type="checkbox" name="videojuegos">cocina <br>
+            </p>
+        </fieldset>
+        <input type="submit" value="Enviar datos">
+    </form>
+    <hr>
+    <form action="">
+        <fieldset>
+        <legend>FORMULARIO CON BOTON DE IMAGEN</legend>
+        <p> <label>Nombre: <input type="text" name="nombre"></label></p>
+        <p> <label>Nombre: <input type="text" name="nombre"></label></p>
+        <p> <label>Direccion: <input type="text" name="direccion"></label></p>
+        <p> Ingrese fecha de nacimiento: <input type="date" name="fechNac" min="2018-01-01" max="2021-09-13"</p>
+
+        <p>
+            Ingrese fecha de nacimiento: <br/>
+            <label>dia: <input type="number" name="dia" min="1" max="31"></label>
+            <label>mes: <input type="number" name="mes" min="1" max="12"></label>
+            <label>anio: <input type="number" name="anio" min="2018" max="2021"></label>
+        </p>
+        <input type="image" src="Capture001.png" alt="Boton Enviar" width="100" height="70" border="1" border-style="solid">
+        </fieldset>
+        </form>
+        <hr>
+
+
+</body>
+</html>

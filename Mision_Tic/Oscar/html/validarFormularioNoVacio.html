@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="frm1" onsubmit="return validarform()" method="post">
+        primer Nombre: <input type="text" name="pNombre" method="post"> <br>
+        <!-- segundo Nombre: <input type="text" name="sNombre" value="lopez"> <br> -->
+        <input type="submit" value="dar click">
+    </form>
+    <script>
+        function validarform(){
+            let x=document.forms["frm1"].value;
+            if(x==""){
+            alert("no puede enviar formularios sin datos");
+        }
+        return false;
+    }
+    </script>
+<!--     <script>
+        const x=document.forms["frm1"];
+        let texto="";
+        for(let i=0; i<x.length;i++){
+            text+=x.elementos[i].value+""
+        }
+    </script> -->
+<!--  -->
+<!--     <p class="intro">1. Parrafo</p>
+    <p class="intro">2. Parrafo</p>
+    <p class="intro">3. Parrafo</p>
+    <p>segundo parrafo</p>
+    <div id="main">
+        <p>1.primer parrafo</p>
+        <p>2.segundo parrafo</p>
+    </div>
+    <p id="demo">salida de los datos</p>
+    <script>
+        const x=document.getElementsByClassName("intro");
+        document.getElementById("demo").innerHTML=x.innerHTML;
+        const y=document.getElementsByTagNameNS("p");
+        document.getElementById("demo").innerHTML="Imprimir segundo parrafo"+y[1].innerHTML;
+ -->
+<!--     </script> -->
+    <!-- <h1 id="titulo"> Titulo de la pagina WEB</h1>
+    <p>1. Lorem, ipsum <b> dolor</b> dolor sit amet consectetur adipisicing elit. Aspernatur ratione corporis expedita amet? Minima deserunt eius eligendi impedit corporis harum molestiae unde cum. Voluptatibus pariatur temporibus odit, est quis quae?</p>
+    <p id="segundo">2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis soluta obcaecati numquam veniam molestias quisquam, aspernatur laudantium quod odio odit commodi libero accusamus ut laboriosam consequatur similique adipisci architecto repudiandae!</p>
+    <p>3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eum nam corporis iusto? Odit explicabo quia eveniet illum repudiandae repellendus, ullam tenetur exercitationem perferendis aperiam at labore eius laboriosam quis!</p>
+    <p id="demos"></p>
+    <script>
+        let elementosp=document.getElementsByTagName("p");
+        let segundoParrafo=document.getElementById("segundo"); -->
+        /*
+
+        <!--  document.getElementById("demo").innerHTML="Hola Mundo"; */
+        const elementos=document.getElementsByTagName("p");
+        document.getElementById("demo").innerHTML="este es el primer parrafo index[0] :"+elementos[2].innerHTML; -->
+<!--     </script>
+ -->
+</body>
+</html>
