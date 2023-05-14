@@ -3,37 +3,53 @@ let x = 0, y = 0;
 export function moveBall(e, ball, stage) {
     const $ball = d.querySelector(ball),
         $stage = d.querySelector(stage);
-        var limitsBall=$ball.getBoundingClientRect(),
-        limitsStage=$stage.getBoundingClientRect();
+    var limitsBall = $ball.getBoundingClientRect(),
+        limitsStage = $stage.getBoundingClientRect();
 
-    console.log(e.keyCode);
-    console.log(e.key);
-    console.log(limitsBall,limitsStage);
+    // console.log(e.keyCode);
+    // console.log(e.key);
+    // console.log(limitsBall, limitsStage);
     // const move(direction) => {
     // };
     //El prevent default evitara que se ejecuten las acciones por default
     //por ejemlo que no baje toda la pantalla cuando se presione hacia abajo
     //sino que solo baje la bolita.
+
+    //para que la bolita choque perfectamente en el borde hay que redondear los desimales.
+
+    //metiendo el prevent default en la validacion evitamos que deshabilite todo el tiempo las barras de escroll del navegador.
     switch (e.keyCode) {
         case 37:
-            e.preventDefault(); //Previene que se ejecuten los comandos por defauld del navegador, en este caso conviene ponerlo aqui para que solo los prevenga en el caso especifico cuando se presione esta tecla.
-            if(limitsBall.left>limitsStage.left)x--;  // el .left es una propiedad del getBounding... que puestra el valor izquierdo.
-            // move("left");
+            if (limitsBall.left > limitsStage.left) {
+                x--;  // el .left es una propiedad del getBounding... que puestra el valor izquierdo.
+                e.preventDefault(); //Previene que se ejecuten los comandos por defauld del navegador, en este caso conviene ponerlo aqui para que solo los prevenga en el caso especifico cuando se presione esta tecla.
+                //x--;
+                // move("left");
+            }
             break;
         case 38:
-            e.preventDefault(); //Previene que se ejecuten los comandos por defauld del navegador, en este caso conviene ponerlo aqui para que solo los prevenga en el caso especifico cuando se presione esta tecla.
-            y--;
-            // move("up");
+            if (limitsBall.top > limitsStage.top) {
+                y--;  // el .left es una propiedad del getBounding... que puestra el valor izquierdo.
+                e.preventDefault(); //Previene que se ejecuten los comandos por defauld del navegador, en este caso conviene ponerlo aqui para que solo los prevenga en el caso especifico cuando se presione esta tecla.
+                // y--;
+                // move("up");
+            }
             break;
         case 39:
-            e.preventDefault(); //Previene que se ejecuten los comandos por defauld del navegador, en este caso conviene ponerlo aqui para que solo los prevenga en el caso especifico cuando se presione esta tecla.
-            x++;
-            // move("right");
+            if (limitsBall.right < limitsStage.right) {
+                x++;  // el .left es una propiedad del getBounding... que puestra el valor izquierdo.
+                // x++;
+                e.preventDefault(); //Previene que se ejecuten los comandos por defauld del navegador, en este caso conviene ponerlo aqui para que solo los prevenga en el caso especifico cuando se presione esta tecla.
+                // move("right");
+            }
             break;
         case 40:
-            e.preventDefault(); //Previene que se ejecuten los comandos por defauld del navegador, en este caso conviene ponerlo aqui para que solo los prevenga en el caso especifico cuando se presione esta tecla.
-            y++;
-            // move("down");
+            if (limitsBall.bottom < limitsStage.bottom) {
+                y++;  // el .left es una propiedad del getBounding... que puestra el valor izquierdo.
+                e.preventDefault(); //Previene que se ejecuten los comandos por defauld del navegador, en este caso conviene ponerlo aqui para que solo los prevenga en el caso especifico cuando se presione esta tecla.
+                // y++;
+                // move("down");
+            }
             break;
         default:
             break;
@@ -50,7 +66,7 @@ export function shortcuts(e) {
     // console.log(`ctrl: ${e.ctrlKey}`);// muestra si se presiono la tecla ctrl (true-false)
     // console.log(`alt: ${e.altKey}`);// muestra si se presiono la tecla alt (true-false)
 
-    console.log(e);
+    // console.log(e);
 
     if (e.key === "a" && e.altKey) {
         alert(" has presionado a + alt y se genero una alerta");
