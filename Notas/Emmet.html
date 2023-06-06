@@ -1,0 +1,73 @@
+ID Y CLASES:
+div#hero.wrapper.clase1 —> 
+<div id="hero" class="wrapper clase1"></div>
+
+ATRIBUTOS:
+img[src="cat.jpg"][alt="foto de gato"] —> 
+<img src="cat.jpg" alt="foto de gato" />
+
+CONTENIDO:
+p{Esto es un párrafo}
+<p>Esto es un párrafo</p>
+
+
+Escalando:
+div+div>p>span+em^bq —> 
+<div></div>
+<div>
+    <p><span></span><em></em></p>
+    <blockquote></blockquote>
+</div>
+
+Agrupar:
+div>(header>ul>li>a)+footer>p
+
+<div>
+    <header>
+        <ul>
+            <li><a href=""></a></li>
+        </ul>
+    </header>
+    <footer>
+        <p></p>
+    </footer>
+</div>
+
+
+MULTIPLICAR:
+ul>li{Item $}*3
+ <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+
+COMENZANDO DESDE UN # ESPECIFICO
+ul>li.item$@3*5
+<ul>
+    <li class="item3"></li>
+    <li class="item4"></li>
+    <li class="item5"></li>
+    <li class="item6"></li>
+    <li class="item7"></li>
+</ul>
+
+Dirección inversa: ul>li.item$@-*5
+
+<ul>
+    <li class="item5"></li>
+    <li class="item4"></li>
+    <li class="item3"></li>
+    <li class="item2"></li>
+    <li class="item1"></li>
+</ul>
+
+Dirección inversa desde un número específico:
+ul>li.item$@-3*5
+<ul>
+    <li class="item7"></li>
+    <li class="item6"></li>
+    <li class="item5"></li>
+    <li class="item4"></li>
+    <li class="item3"></li>
+</ul>
