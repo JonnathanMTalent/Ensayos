@@ -1,0 +1,1 @@
+windows + espacio  : configura el tipo de teclado por idioma.

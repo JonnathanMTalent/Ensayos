@@ -2,3 +2,5 @@ repositorio: https://github.com/JonnathanMTalent/Ensayos
 nombre repositorio remoto: Ensayos
 
 correo: jonnathan.monroy741@gmail.com
+
+ATAJOS DE WINDOWS EN VISUAL STUDIO CODE: https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf

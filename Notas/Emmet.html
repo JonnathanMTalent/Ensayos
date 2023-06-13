@@ -1,73 +1,96 @@
-ID Y CLASES:
-div#hero.wrapper.clase1 —> 
+<!--  * ESTE COMENTARIO SE VE MUY BIEN  -->
+<!-- ! ESTE ES UN COMENTARIO EN COLOR BLANCO -->
+<!--  //  ESTE TEXTO esta subrayado  -->
+<!-- todo ESTA PENDIENTE REALIZARCE -->
+<!-- ¿ ESTO SERIA UNA PREGUNTA -->
+
+ID Y CLASES: div#hero.wrapper.clase1 —>
 <div id="hero" class="wrapper clase1"></div>
 
-ATRIBUTOS:
-img[src="cat.jpg"][alt="foto de gato"] —> 
+ATRIBUTOS: img[src="cat.jpg"][alt="foto de gato"] —>
 <img src="cat.jpg" alt="foto de gato" />
 
-CONTENIDO:
-p{Esto es un párrafo}
+CONTENIDO: p{Esto es un párrafo}
 <p>Esto es un párrafo</p>
 
-
-Escalando:
-div+div>p>span+em^bq —> 
+Escalando: Nodos hermanos + div+div>p>span+em^bq —>
 <div></div>
 <div>
-    <p><span></span><em></em></p>
-    <blockquote></blockquote>
+  <p><span></span><em></em></p>
+  <blockquote></blockquote>
 </div>
 
-Agrupar:
-div>(header>ul>li>a)+footer>p
+Agrupar: Nodos hijos > div>(header>ul>li>a)+footer>p
 
 <div>
-    <header>
-        <ul>
-            <li><a href=""></a></li>
-        </ul>
-    </header>
-    <footer>
-        <p></p>
-    </footer>
+  <header>
+    <ul>
+      <li><a href=""></a></li>
+    </ul>
+  </header>
+  <footer>
+    <p></p>
+  </footer>
 </div>
 
-
-MULTIPLICAR:
-ul>li{Item $}*3
- <ul>
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
+MULTIPLICAR: ul>li{Item $}*3
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
 </ul>
 
-COMENZANDO DESDE UN # ESPECIFICO
-ul>li.item$@3*5
+COMENZANDO DESDE UN # ESPECIFICO ul>li.item$@3*5
 <ul>
-    <li class="item3"></li>
-    <li class="item4"></li>
-    <li class="item5"></li>
-    <li class="item6"></li>
-    <li class="item7"></li>
+  <li class="item3"></li>
+  <li class="item4"></li>
+  <li class="item5"></li>
+  <li class="item6"></li>
+  <li class="item7"></li>
 </ul>
 
 Dirección inversa: ul>li.item$@-*5
 
 <ul>
-    <li class="item5"></li>
-    <li class="item4"></li>
-    <li class="item3"></li>
-    <li class="item2"></li>
-    <li class="item1"></li>
+  <li class="item5"></li>
+  <li class="item4"></li>
+  <li class="item3"></li>
+  <li class="item2"></li>
+  <li class="item1"></li>
 </ul>
 
-Dirección inversa desde un número específico:
-ul>li.item$@-3*5
+Dirección inversa desde un número específico: ul>li.item$@-3*5
 <ul>
-    <li class="item7"></li>
-    <li class="item6"></li>
-    <li class="item5"></li>
-    <li class="item4"></li>
-    <li class="item3"></li>
+  <li class="item7"></li>
+  <li class="item6"></li>
+  <li class="item5"></li>
+  <li class="item4"></li>
+  <li class="item3"></li>
 </ul>
+
+NODOS SUPERIORES ^: ul>li>div+p^li>span
+
+<ul>
+  <li>
+    <div></div>
+    <p></p>
+  </li>
+  <li><span></span></li>
+</ul>
+
+ul>li>div+p^^p
+
+<ul>
+  <li>
+    <div></div>
+    <p></p>
+  </li>
+</ul>
+<p></p>
+
+<!--  ?PONER EN NEGRITA O SELECCIONAR DENTRO DE UN TEXTO ej: texto b{texto} texto: -->
+Lorem ipsum, b{dolor sit amet consectetur} adipisicing elit.
+<p>
+  Lorem ipsum dolor, <b>sit amet consectetur adipisicing elit.</b> Dolorem,
+  earum.
+</p>
