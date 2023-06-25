@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Agenda de Citas</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      td.available {
+        background-color: #b3ffb3;
+        cursor: pointer;
+      }
+
+      td.unavailable {
+        background-color: #ff9999;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Agenda de Citas</h1>
+    <table id="citas">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Fecha</th>
+          <th>Hora</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cliente 1</td>
+          <td>Fecha 1</td>
+          <td class="available">Hora 1</td>
+        </tr>
+        <tr>
+          <td>Cliente 2</td>
+          <td>Fecha 2</td>
+          <td class="available">Hora 2</td>
+        </tr>
+        <tr>
+          <td>Cliente 3</td>
+          <td>Fecha 3</td>
+          <td class="available">Hora 3</td>
+        </tr>
+        <!-- Agrega más filas según sea necesario -->
+      </tbody>
+    </table>
+
+    <script src="horarios.js"></script>
+  </body>
+</html>
