@@ -7,6 +7,9 @@ import darkTheme from "./dom/tema_oscuro.js";
 import responsiveMedia from "./dom/objeto_responsive.js";
 import responsiveTester from "./dom/prueba_responsive.js";
 import userDeviceInfo from "./dom/deteccion_dispositivos.js";
+import networkStatus from "./dom/deteccion_red.js";
+import webCam from "./dom/deteccion_webcam.js";
+import getGeolocation from "./dom/geolocalizacion.js";
 
 const d = document;
 
@@ -31,6 +34,8 @@ d.addEventListener("DOMContentLoaded", (e) => { // esto permite que cargue el do
     );
     responsiveTester("responsive-tester");
     userDeviceInfo("user-device"); // Deteccion de dispositivos
+    webCam("webcam");
+    getGeolocation("geolocation");
 })
 //https://emojipedia.org/es/  AQUI PUEDO SACAR EMOTICONES POR BÚSQUEDA.
 // Con este código vamos a detectar los shortcuts que se tecleen cuando este posado sobre el viewport (Interfaz de usuario)
@@ -42,3 +47,4 @@ d.addEventListener("keydown", (e) => { //El evento keydown es cuando se teclea u
 });
 
 darkTheme(".dark-theme-btn", "dark-mode"); // se quito de arriba y se puso aqui afuera del DOMContentLoaded, porque se llamo otro evento DOMContentLoaded para usar el localStorage
+networkStatus();

@@ -1,142 +1,137 @@
 /*   Reset css  */
-:root{
-    --main-font:sans-serif;
-    --font-size:16px;
-    --main-color:#f7df1e;
-    --second-color:#222;
-    --main-modal-color:rgba(247,222,30,0.85);
-    --second-modal-color:rgba(34,34,34,0.85);
-    --container-with:1200px;
+:root {
+  --main-font: sans-serif;
+  --font-size: 16px;
+  --main-color: #f7df1e;
+  --second-color: #222;
+  --main-modal-color: rgba(247, 222, 30, 0.85);
+  --second-modal-color: rgba(34, 34, 34, 0.85);
+  --container-with: 1200px;
 }
 html {
-    box-sizing: border-box;
-    font-family: var(--main-font);
-    font-size: var(--font-size);
-    scroll-behavior: smooth;
-  }
+  box-sizing: border-box;
+  font-family: var(--main-font);
+  font-size: var(--font-size);
+  scroll-behavior: smooth;
+}
 
-  *,
+*,
 *:before,
 *:after {
   box-sizing: inherit;
 }
 
 body {
-    margin: 0;
-    overflow-x: hidden;
-  }
-  
-  img,
-  video {
-    max-width: 100%;
-    height: auto;
-  }
+  margin: 0;
+  overflow-x: hidden;
+}
 
-  .flex-row-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
 
-  /* **********     menu-hamburguesa     ********** */
+.flex-row-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* **********     menu-hamburguesa     ********** */
 
 .header {
-    position: sticky;
-    z-index: 997;
-    top: 0;
-    padding: 1rem;
-    background-color: var(--main-color);
-    color: var(--second-color);
-  }
-
-  
+  position: sticky;
+  z-index: 997;
+  top: 0;
+  padding: 1rem;
+  background-color: var(--main-color);
+  color: var(--second-color);
+}
 
 .header h1 {
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .section {
-    padding: 2rem;
-    padding-top: 4rem;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    max-width: var(--container-width);
-    min-height: 100vh;
-    text-align: center;
-  }
+  margin: 0 auto;
+  text-align: center;
+}
 
-  
+.section {
+  padding: 2rem;
+  padding-top: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: var(--container-width);
+  min-height: 100vh;
+  text-align: center;
+}
 
 .panel {
-    position: fixed;
-    z-index: 998;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    /* display: flex;
+  position: fixed;
+  z-index: 998;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  /* display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    overflow-y: auto; */
-    background-color: var(--second-modal-color);
-    opacity: 0;
-    visibility: hidden;
-    transition: transform 0.3s ease, opacity 0.5s ease;
-    /* De arriba */
-    /* transform: translate(0, -100%);
+    align-items: center;*/
+  overflow-y: auto;
+  background-color: var(--second-modal-color);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease, opacity 0.5s ease;
+  /* De arriba */
+  /* transform: translate(0, -100%);
     /* De abajo */
-    /* transform: translate(0, 100%); */
-    /* De la derecha */
-    /* transform: translate(100%, 0); */
-    /* De la izquierda */
-    /* transform: translate(-100%, 0);  */
-  }
-  
-  .panel.is-active {
-    transform: translate(0, 0);
-    opacity: 1;
-    visibility: visible; /*permite que se vuelva visible nuevamente el panel*/
-  }
-  
-  .panel-btn {
-    position: fixed;
-    z-index: 999;
-    bottom: 1vh;
-    right: 1vw;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--main-color);
-  }
+  /* transform: translate(0, 100%); */
+  /* De la derecha */
+  /* transform: translate(100%, 0); */
+  /* De la izquierda */
+  /* transform: translate(-100%, 0);  */
+}
 
-  .menu {
-    width: inherit;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .menu a {
-    padding: 2rem;
-    width: inherit;
-    display: block;
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: var(--main-color);
-    transition: all 0.3s ease;
-  }
+.panel.is-active {
+  transform: translate(0, 0);
+  opacity: 1;
+  visibility: visible; /*permite que se vuelva visible nuevamente el panel*/
+}
 
-  
+.panel-btn {
+  position: fixed;
+  z-index: 999;
+  bottom: 1vh;
+  right: 1vw;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-color);
+}
+
+.menu {
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+
+.menu a {
+  padding: 2rem;
+  width: inherit;
+  display: block;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--main-color);
+  transition: all 0.3s ease;
+}
+
 .menu a:hover {
   font-weight: bold;
   color: var(--second-color);
@@ -145,18 +140,18 @@ body {
 
 /* *********** EVENTOS DEL TECLADO *********** */
 .stage {
-  display:flex;
-  min-height:50vh;
+  display: flex;
+  min-height: 50vh;
   background-color: var(--second-color);
 }
 
 /* la pelota realmente es un cuadrado con bordes redondeados: */
-.ball { 
-  margin:auto;
-  width:4rem;
-  height:4rem;
-  border-radius:50%;
-  background-color:var(--main-color);
+.ball {
+  margin: auto;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: var(--main-color);
   /* background-color:rgba(247,222,30,0.85); */
 }
 
@@ -165,58 +160,78 @@ body {
 .scroll-top-btn {
   position: fixed;
   z-index: 999;
-  bottom:1vh;
-  right:calc(4.25rem + 1vw); /*Esto separa los dos botones , calc permite realizar opereciones en css */
-  width:4rem;
-  height:4rem;
+  bottom: 1vh;
+  right: calc(
+    4.25rem + 1vw
+  ); /*Esto separa los dos botones , calc permite realizar opereciones en css */
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
   font-size: 2rem;
   font-weight: bold;
   background-color: var(--main-color);
-  color:var(--second-color);
-  cursor:pointer; /*hace que aparezca el cursor cuando se posa sobre el botón*/
-  outline:0;  /* quita la linea del borde externo del botón*/
-  border:0;
-  transition:all 0.3s ease-out; /*tardanza para que haga la transicion el boton*/
+  color: var(--second-color);
+  cursor: pointer; /*hace que aparezca el cursor cuando se posa sobre el botón*/
+  outline: 0; /* quita la linea del borde externo del botón*/
+  border: 0;
+  transition: all 0.3s ease-out; /*tardanza para que haga la transicion el boton*/
 }
 
 .scroll-top-btn:hover {
   background-color: var(--second-color);
-  color:var(--main-color);
+  color: var(--main-color);
 }
 /* La clase hidden permite que no sea visible, al quitarsela dinamicamente vuelve a ser visible */
 .hidden {
-  visibility:hidden;
-  opacity:0;
+  visibility: hidden;
+  opacity: 0;
 }
-
 
 /* ******************* DarkThemeButton ************ */
 
 .dark-theme-btn {
   position: fixed;
   z-index: 999;
-  bottom:1vh;
-  left:1vw;  /*Esto separa los dos botones , calc permite realizar opereciones en css */
-  width:4rem;
-  height:4rem;
+  bottom: 1vh;
+  left: 1vw; /*Esto separa los dos botones , calc permite realizar opereciones en css */
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
   font-size: 2rem;
   font-weight: bold;
   background-color: var(--main-color);
-  color:var(--second-color);
-  cursor:pointer; /*hace que aparezca el cursor cuando se posa sobre el botón*/
-  outline:0;  /* quita la linea del borde externo del botón*/
-  border:0;
-  transition:all 0.3s ease-out; /*tardanza para que haga la transicion el boton*/
+  color: var(--second-color);
+  cursor: pointer; /*hace que aparezca el cursor cuando se posa sobre el botón*/
+  outline: 0; /* quita la linea del borde externo del botón*/
+  border: 0;
+  transition: all 0.3s ease-out; /*tardanza para que haga la transicion el boton*/
 }
 
 .dark-theme-btn:hover {
   background-color: var(--second-color);
-  color:var(--main-color);
+  color: var(--main-color);
 }
 
 .dark-mode {
   background-color: var(--second-color);
-  color:var(--main-color);
+  color: var(--main-color);
+}
+
+/*  ******************  Network Status ******************** */
+
+.online,
+.offline {
+  position: sticky; /* la posicion sticky es pegajoso. se queda en esa parte de la pantalla */
+  top: 0;
+  z-index: 1000;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: #1b5e20;
+  color: #fff;
+}
+
+.offline {
+  background-color: #b71c1c;
 }
