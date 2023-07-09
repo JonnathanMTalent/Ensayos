@@ -2,7 +2,7 @@ use escuela;
 select * from salon;
 truncate table salon; -- la llave foranea impide hacer el truncate
 
-set foreign_key_checks=0; -- Deshabilita el chekeo de las llaves foraneaas 
+set foreign_key_checks=0; --*  Deshabilita el chekeo de las llaves foraneaas 
 truncate table salon; -- despues de deshablitar las llaves si funciona
 truncate table alumno; -- borramos la tabla alumno
 
@@ -51,7 +51,7 @@ delete from alumno where id='1';
 delete from alumno where nota='5';
 delete from salon where id='1';
 
-delete from alumno; -- borra todo lo que hay en la tabla alumno, sin resetar los indices o contadores
+delete from alumno; -- borra todo lo que hay en la tabla alumno, sin resetear los indices o contadores
 truncate table alumno; -- borra todo lo que hay en la tabla alumno, reseteando tambien los contadores que hay.
 
 
@@ -153,6 +153,11 @@ CREATE TABLE `escuela`.`materia` (
   `nombre` VARCHAR(45) NULL,
   PRIMARY KEY (`id`));
   
+
+--* GENERAMOS UNA RELACION DE MUCHOS A MUCHOS CON LA GENERACION DE UNA NUEVA TABLA.
+-- Esta tomando datos de las tablas alumno y materia para relacionarlos en la nueva tabla clase.
+-- esto lo hace a travez de las llaves primarias de cada una (id de alumno, id de materia) y las convierte en llaves foraneas en la tabla clase.
+
 CREATE TABLE `escuela`.`clase` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `idAlumno` INT NULL,
@@ -264,6 +269,8 @@ set @cantidad_reprovado=0;
 set @cantidad_minimo=0;
 set @cantidad_excelente=0;
 
+ --¿ la palabra into guarda el valor en la variable:
+
 select count(*) into @cantidad_reprobado
 from alumno
 where nota<=@nota_reprobado;
@@ -283,6 +290,11 @@ select @cantidad_reprobado as reprobados, @cantidad_minimo as aprobados, @cantid
 
 -- *PROCEDIMIENTOS ALMACENADOS EN MYSQL:
 
+-- se diferencian de las funciones en que en este caso se puede tener cuantas variables de entrada y salida se 
+-- quiera, ademas las funciones se pueden llamar dentro de otras sentencias, estos procedure nó.
+
+--¿  in indica parametro de entrada. out indica parametro de salida,; luego hay que poner de que tipo es el parámetro
+--¿ begin - end indican el inicio y final respectivamente de el procedure.
 
 delimiter //
 create procedure alumnos_con_letra(in letra char)
@@ -325,6 +337,8 @@ call alumnos_con_letra_con_retorno('j',@cantidad_j);
 select @cantidad_l as con_l, @cantidad_j as con_j,  @cantidad_i as con_i;
 
 -- *FUNCIONES EN SQL:
+-- se diferencian de los procedure en que en este caso se puede tener solo variables de entrada en los parametros, una sola salida  
+-- , ademas las funciones se pueden llamar dentro de otras sentencias, los procedure nó.
 
 delimiter //
 create function numero_letras(letra char) returns int
@@ -395,6 +409,8 @@ select *from escuela.acciones;
 
 
 -- *GENERANDO GATILLOS O TRIGGER:
+-- los gatillos sirven para la seguridad de la base de datos. Ya que generan registro de acciones
+-- son similares a un addEveentListener de javaScript
 
 delimiter //
 create trigger log_tabla_alumno after insert on alumno

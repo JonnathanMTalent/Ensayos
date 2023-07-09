@@ -235,3 +235,41 @@ video {
 .offline {
   background-color: #b71c1c;
 }
+
+/*   ******************** SearchFilters   TARJETAS DE IMÁGENES ******************* */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* esta propiedad
+     grid-template-columns: es la propiedad que permite definir las columnas, 
+     en repeat el primer parametro es la cantidad de columnas, el segundo es la 
+     dimension de las columnas, autoo-fit es que se ajuste a la cantidad de hijos de
+     el grid, el minmax permite que se ajuste entre el tamaño minimo y el maximo al estilo 
+     responsive.
+     */
+}
+
+.card {
+  background-color: var(--second-color);
+  color: var(--main-color);
+  transition: all 0.3s ease-out;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card figcaption {
+  padding: 1rem;
+}
+
+.filter {
+  /* display: none; */ /*  esto quita los elementos de la interfaz grafica.. se crecen por la propiedad min-max*/
+  visibility: hidden; /* mientras que estas dos solo ocultan, pero quedan los espacios en blanco*/
+  opacity: 0;
+  order: 1; /* como el grid aplica esta propiedad order:0 al aplicar order:1 las tarjetas se van a acomodar. */
+}

@@ -33,6 +33,8 @@ alter table alumno add column idSalon int not null after id;
 
 alter table alumno add constraint fk_idSalon foreign key (idSalon) -- establece la relacion de llave foranea entre tablas
 references salon(id)  on delete cascade on update cascade;
+
+--  PILAS: Lo siguiente va en comillas invertidas no comillas normales.
 insert into `salon` (grupo,grado) values ('A',1),('B',1),('C',1);
 insert into `alumno` (nombre,fecha_ingreso,idSalon) values ('Juan','2020-01-01',1),('Daniel','2020-01-02',2),('Andrea','2020-01-01',1),('Natalia','2020-01-01',2),('Juana','2020-01-01',1);
 alter table alumno drop constraint fk_idSalon;
