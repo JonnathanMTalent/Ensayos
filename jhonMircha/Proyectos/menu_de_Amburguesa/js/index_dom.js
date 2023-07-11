@@ -11,6 +11,8 @@ import networkStatus from "./dom/deteccion_red.js";
 import webCam from "./dom/deteccion_webcam.js";
 import getGeolocation from "./dom/geolocalizacion.js";
 import searchFilters from "./dom/filtro_busquedas.js";
+import draw from "./dom/sorteo.js";
+import slider from "./dom/carrusel.js";
 
 const d = document;
 
@@ -38,6 +40,8 @@ d.addEventListener("DOMContentLoaded", (e) => { // esto permite que cargue el do
     webCam("webcam");
     getGeolocation("geolocation");
     searchFilters(".card-filter", ".card");
+    draw("#winner-btn", ".player");
+    slider();
 })
 //https://emojipedia.org/es/  AQUI PUEDO SACAR EMOTICONES POR BÚSQUEDA.
 // Con este código vamos a detectar los shortcuts que se tecleen cuando este posado sobre el viewport (Interfaz de usuario)
