@@ -337,3 +337,152 @@ video {
 .slider a:hover {
   color: #4d4d4d;
 }
+
+/* **********     ScrollSpy     ********** */
+/* C  */
+@media screen and (min-width: 1024px) {
+  /* La minima anchura del body va a ser de 1024 hacia arriba  */
+  body {
+    display: grid; /* C el grid divide la pantalla en secciones de porcentaje, en este caso el padre es el body  */
+    grid-template-columns: 80% 20%; /* C  1 columna de 80 y otra de 20*/
+    grid-template-rows: 4rem auto; /* C  definimos las filas, la primera de 4 rem y la otra automatica*/
+    grid-template-areas:
+      "header header"
+      "main panel"; /* C  aqui estamos acomodando los elementos en las columnas y filas, como el ejemplo de los cuadritos de excell.*/
+    /* C El header estara en la primera fila ocupando las 2 columnas y en la segunda fila estaran el main y el panel, el main con 4 rem y el panel auto */
+    /* C  cada entrecomillado es una fila*/
+  }
+
+  main {
+    grid-area: main; /* C  esta palabra main es la que esta mas arriba en grid-template-areas, osea es una referencia con el mismo nombre*/
+  }
+
+  .header {
+    grid-area: header; /* C   /* C  esta palabra main es la que esta mas arriba en grid-template-areas, osea es una referencia con el mismo nombre*/
+  }
+
+  .panel {
+    grid-area: panel;
+    align-self: start; /* C  alinea al inicio de donde empieza la celda el contenido */
+    position: sticky; /* C  QUEDA pegado*/
+    top: 4rem; /* C   tiene la misma medida de la cabezera o header*/
+    justify-content: flex-start; /* C  para que su contenido osea los enlaces empiecen al inicio*/
+    background-color: var(--second-color); /* C se copia del original */
+    transform: translate(0, 0);
+    opacity: 1; /* C estas propiedaes opaciy y visibility  se copiaron de el panel inicial para siga pareciendose  */
+    visibility: visible;
+    overflow-y: auto;
+  }
+
+  .panel-btn {
+    display: none; /*// C   con esta linea hacemos que no se muestre el panel btn cuando este en esta resolucion de pantalla*/
+  }
+
+  .menu {
+    justify-content: start;
+    text-align: right; /* C  alinea el texto a la derecha en el menu*/
+  }
+
+  .menu a {
+    padding: 0.75rem;
+    font-size: 1rem; /* C  modifica el tamaño del texto*/
+  }
+
+  .menu a:hover, /* C  modifica cuando se pone el cursor sobre */
+  /* C  tambien va a plicar estos estilos cuando el scroll este dando la clase active,sig línea.*/
+  .menu a.active {
+    color: var(--second-color);
+    background-color: var(--main-color);
+  }
+
+  .scroll-top-btn {
+    /* C  la flechita que va y lleva hacia arriba */
+    right: initial;
+    left: calc(
+      4.25rem + 1vw
+    ); /* C  en la version inicial estaba en right  osea cuando se reduzca la pantalla este boton se mueve a la derecha */
+  }
+}
+
+/* **********     ContactForm Validations     ********** */
+
+/*  // POR AQUI IRIA EL COMMENTARIO
+.contact-form {
+  --form-ok-color: #4caf50;
+  --form-error-color: #f44336;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.contact-form > * {
+  padding: 0.5rem;
+  margin: 1rem auto;
+  display: block;
+  width: 100%;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form legend,
+.contact-form-response {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-size: 1rem;
+  font-family: sans-serif;
+}
+
+.contact-form input[type="submit"] {
+  width: 50%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contact-form *::placeholder {
+  color: #000;
+}
+
+.contact-form [required]:valid {
+  border: thin solid var(--form-ok-color);
+}
+
+.contact-form [required]:invalid {
+  border: thin solid var(--form-error-color);
+}
+
+.contact-form-error {
+  margin-top: -1rem;
+  font-size: 80%;
+  background-color: var(--form-error-color);
+  color: #fff;
+  transition: all 800ms ease;
+}
+
+.contact-form-error.is-active {
+  display: block;
+  animation: show-message 1s 1 normal 0s ease-out both;
+}
+
+.none {
+  display: none;
+}
+
+@keyframes show-message {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+} 
+ */
