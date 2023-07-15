@@ -39,8 +39,8 @@
         <a href="#seccion10" data-scroll-spy>Filtros de búsqueda</a>
         <a href="#seccion11" data-scroll-spy>Sorteo Digital</a>
         <a href="#seccion12" data-scroll-spy>Responsive Slider</a>
-        <a href="#seccion13" data-scroll-spy>Seccion13</a>
-        <a href="#seccion14" data-scroll-spy>Seccion14</a>
+        <a href="#seccion13" data-scroll-spy>Video inteligente</a>
+        <a href="#seccion14" data-scroll-spy>Validaciones de Formulario</a>
         <a href="#seccion15" data-scroll-spy>Seccion15</a>
       </nav>
     </aside>
@@ -179,10 +179,95 @@
         </div>
       </section>
       <section id="seccion13" class="section" data-scroll-spy>
-        <h2>seccion13</h2>
+        <h2>Video Inteligente</h2>
+        <video
+          src="../../assets/GrabacionIncial.mp4"
+          muted
+          controls
+          loop
+          data-smart-video
+        ></video>
+        <!-- para que nos permita iniciar el video debe estar muteado pues los permisos pueden blokearlo -->
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <!-- si uno quiere que el video se reproduzca desde el inicio hay que dar autoplay, pero en dispositivos mobiles el usuario es el que tiene que  darle a la reproduccion. -->
+        <video
+          src="../../assets/GrabacionIncial.mp4"
+          muted
+          controls
+          loop
+          data-smart-video
+        ></video>
       </section>
+
       <section id="seccion14" class="section" data-scroll-spy>
-        <h2>seccion14</h2>
+        <h2>Validaciones de Formulario</h2>
+        <form class="contact-form">
+          <legend>Envíanos tus comentarios</legend>
+          <!-- Importante no dejar espacios en el pattern de la expresion regular -->
+          <!-- El browser mostrara en las alertas lo que hay en el title -->
+          <!-- El required=required hace que solicite que el campo no este vacio. -->
+          <!-- pattern evalua una expresion regular o patron en el input -->
+          <input
+            type="text"
+            name="name"
+            placeholder="Escribe tu nombre"
+            title="El nombre sólo acepta letras y espacios en blanco"
+            pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Escribe tu e-mail"
+            title="Email incorrecto"
+            pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
+            required
+          />
+
+          <input
+            type="text"
+            name="subject"
+            placeholder="Asunto a tratar"
+            title="El asunto es requerido"
+            required="required"
+          />
+
+          <!-- como el textarea no acepta pattern se le inventó un atributo data pattern  -->
+          <textarea
+            name="comments"
+            cols="50"
+            rows="5"
+            placeholder="Escribe tus comentarios aquí."
+            title="Tu comentario no debe exceder los 255 caracteres."
+            data-pattern="^.{1,255}$"
+            required
+          ></textarea>
+          <input type="submit" value="Enviar" />
+          <div class="contact-form-loader none">
+            <img
+              src="../../assets/svg-loaders/ball-triangle.svg"
+              alt="Cargando"
+            />
+          </div>
+          <div class="contact-form-response none">
+            <p>Los datos han sido enviados</p>
+          </div>
+        </form>
       </section>
       <section id="seccion15" class="section" data-scroll-spy>
         <h2>seccion15</h2>

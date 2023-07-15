@@ -406,7 +406,6 @@ video {
 
 /* **********     ContactForm Validations     ********** */
 
-/*  // POR AQUI IRIA EL COMMENTARIO
 .contact-form {
   --form-ok-color: #4caf50;
   --form-error-color: #f44336;
@@ -415,17 +414,20 @@ video {
   width: 80%;
 }
 
+/* el asterisco significa todos : en la sig linea dice a todos los elementos que son hijos directos del formulario de contacto*/
 .contact-form > * {
-  padding: 0.5rem;
+  padding: 0.5rem; /* esta linea da separacion a todos los elementos del contact-form */
   margin: 1rem auto;
   display: block;
   width: 100%;
 }
 
+/* elimina el triangulito de la esquina para que no se pueda redimensionar el text area */
 .contact-form textarea {
   resize: none;
 }
 
+/*  le damos estilos a los títulos */
 .contact-form legend,
 .contact-form-response {
   font-size: 1.5rem;
@@ -433,26 +435,31 @@ video {
   text-align: center;
 }
 
+/* con esto estandarizamos el tipo de letra en todos los input y text area ya que la letra sale diferente. */
 .contact-form input,
 .contact-form textarea {
   font-size: 1rem;
   font-family: sans-serif;
 }
 
+/* personalizamos el boton de enviar */
 .contact-form input[type="submit"] {
   width: 50%;
   font-weight: bold;
   cursor: pointer;
 }
 
+/* a todos los elementos del formulario que tengan el atributo placeholder aplicarle: */
 .contact-form *::placeholder {
   color: #000;
 }
 
+/*! LO SIGUIENTE CAMBIARA EL COLOR DE LOS RECUADROS SEGUN SU VALIDEZ */
+/* cuando un elemento del .contact-form tenga el atributo required y este sea igual a valid */
 .contact-form [required]:valid {
   border: thin solid var(--form-ok-color);
 }
-
+/* cuando un elemento del .contact-form tenga el atributo required y este sea igual a invalid */
 .contact-form [required]:invalid {
   border: thin solid var(--form-error-color);
 }
@@ -470,10 +477,13 @@ video {
   animation: show-message 1s 1 normal 0s ease-out both;
 }
 
+/* lo que tenga esta clase no se va a mostrar */
 .none {
   display: none;
 }
 
+/* ! esto es para la animacion  */
+/* empiza con el 0% y va aumentando hasta el 100% como un control de tiempo, en este caso empiza invisible y se va mostrando gradualmente. */
 @keyframes show-message {
   0% {
     visibility: hidden;
@@ -484,5 +494,4 @@ video {
     visibility: visible;
     opacity: 1;
   }
-} 
- */
+}
