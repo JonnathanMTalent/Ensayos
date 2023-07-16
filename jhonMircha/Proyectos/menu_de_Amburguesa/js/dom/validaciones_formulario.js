@@ -41,5 +41,24 @@ export default function contactFormValidations() {
                 }
             }
         })
-    })
+    });
+    //aqui es donde cargara el formulario
+    d.addEventListener("submit", (e) => {
+        //hay que desactivar el prevent default para que se pueda enviar realmente el correo.
+        // e.preventDefault();  //muy umportante prevenir el comportamiento por default
+        alert("Enviando Formulario");
+        const $loader = d.querySelector(".contact-form-loader"), // aqui atrapamos el nodo del loader que es la imagen  que muestra carga
+            $response = d.querySelector(".contact-form-response"); //aqui atrapamos el nodo del texto de respuesta de envio
+        $loader.classList.remove("none"); // removemos el none, para que ahora si se vea el loader.
+
+
+        // con este set time out simulamos una peticion ajax
+        setTimeout(() => {
+            $loader.classList.add("none"); // estamos jugando con mostrar y no mostrar el loader y la respuesta para simular el llamado ajax
+            $response.classList.remove("none");
+            $form.reset(); // se resetea el formulario.
+            setTimeout(() => $response.classList.add("none"), 3000); //metemos un segundo tiempo de espera
+        }, 3000);
+    });
+
 }

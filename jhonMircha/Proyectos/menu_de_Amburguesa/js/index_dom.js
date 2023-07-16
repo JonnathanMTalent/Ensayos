@@ -16,6 +16,7 @@ import slider from "./dom/carrusel.js";
 import scrollSpy from "./dom/scroll_espia.js";
 import smartVideo from "./dom/video_inteligente.js";
 import contactFormValidations from "./dom/validaciones_formulario.js";
+import speechReader from "./dom/narrador.js";
 
 const d = document;
 
@@ -60,3 +61,4 @@ d.addEventListener("keydown", (e) => { //El evento keydown es cuando se teclea u
 
 darkTheme(".dark-theme-btn", "dark-mode"); // se quito de arriba y se puso aqui afuera del DOMContentLoaded, porque se llamo otro evento DOMContentLoaded para usar el localStorage
 networkStatus();
+speechReader();

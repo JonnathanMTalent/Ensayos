@@ -41,7 +41,7 @@
         <a href="#seccion12" data-scroll-spy>Responsive Slider</a>
         <a href="#seccion13" data-scroll-spy>Video inteligente</a>
         <a href="#seccion14" data-scroll-spy>Validaciones de Formulario</a>
-        <a href="#seccion15" data-scroll-spy>Seccion15</a>
+        <a href="#seccion15" data-scroll-spy>Narrador</a>
       </nav>
     </aside>
     <main>
@@ -216,7 +216,14 @@
 
       <section id="seccion14" class="section" data-scroll-spy>
         <h2>Validaciones de Formulario</h2>
-        <form class="contact-form">
+        <form
+          class="contact-form"
+          action="https://formsubmit.co/roycreacionesysoluciones@gmail.com"
+          method="POST"
+          target="_blank"
+        >
+          <!-- ! ESTE CODIGO DE ARRIBA ENVIA LOS DATOS DEL FORMULARIO  USANDO LA PAGIAN FORMSUBMIT-->
+
           <legend>Envíanos tus comentarios</legend>
           <!-- Importante no dejar espacios en el pattern de la expresion regular -->
           <!-- El browser mostrara en las alertas lo que hay en el title -->
@@ -244,7 +251,7 @@
             name="subject"
             placeholder="Asunto a tratar"
             title="El asunto es requerido"
-            required="required"
+            required
           />
 
           <!-- como el textarea no acepta pattern se le inventó un atributo data pattern  -->
@@ -270,7 +277,19 @@
         </form>
       </section>
       <section id="seccion15" class="section" data-scroll-spy>
-        <h2>seccion15</h2>
+        <h2>Narrador</h2>
+        <select id="speech-select">
+          <option value="">---Elige una voz ---</option>
+        </select>
+        <br /><br />
+        <textarea
+          name=""
+          id="speech-text"
+          cols="50"
+          rows="5"
+          placeholder="Ingrese texto a leer"
+        ></textarea>
+        <button id="speech-btn">Leer texto</button>
       </section>
     </main>
     <button class="scroll-top-btn hidden">&#11014;</button>
@@ -278,3 +297,5 @@
     <script src="../js/index_dom.js" type="module"></script>
   </body>
 </html>
+
+<!-- // cambas, drag and drop y otras api de javaScript : cosas del front que puedo aprender -->
