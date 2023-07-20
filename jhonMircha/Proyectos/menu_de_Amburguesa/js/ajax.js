@@ -34,7 +34,7 @@
             $xhr.innerHTML = `Error ${xhr.status}: ${message}`; // en el objeto ajax (xhr en este caso) siempre viene en el status el codigo y el mensaje tendra la variable de arriba.
         }
 
-        // console.log("Este mensaje cargará de cualquier forma"); // Aqui ponemos cosas que queremos que carguen independientemente de la respuesta del ajax.
+        console.log("Este mensaje cargará de cualquier forma XMLHttpRequest()"); // Aqui ponemos cosas que queremos que carguen independientemente de la respuesta del ajax.
     });
 
     xhr.open("GET", "https://jsonplaceholder.typicode.com/users");  //3) Aqui mensionamos el método de traida de datos GET y la ruta donde estan los datos.
@@ -70,9 +70,9 @@
             // res.blob()  imagen en base o formato data uri, y para todo lo que no sea texto
             return res.ok ? res.json() : Promise.reject(res);
           }) */
-        .then((res) => (res.ok ? res.json() : Promise.reject(res))) // este convierte a res de ReadableStream a json//! este Promise.reject(res) permite que se ejecute el cath del error de la promesa. si no lo ponemos no ejecurá el catch.
+        .then((res) => (res.ok ? res.json() : Promise.reject(res))) // este convierte a res de ReadableStream a json//! este Promise.reject(res) permite que se ejecute el cath del error de la promesa. si no lo ponemos no ejecurá el catch. Aqui con el reject estamos rechazando la promeza y enviando el error
         .then((json) => { // este then recibe el return implicito del arrow function de arriba como un json.
-            console.log(json);
+            // console.log(json);
             //$fetch.innerHTML = json;
             json.forEach((el) => {
                 const $li = document.createElement("li");
@@ -89,8 +89,117 @@
         })
         .finally(() => {
             console.log(
-                "Esto se ejecutará independientemente del resultado de la Promesa Fetch"
+                "Esto se ejecutará independientemente del resultado de la Promesa Fetch Api Fech"
             );
         });
 
+})();
+
+
+//*API Fetch + Asinc-Await
+(() => {
+    const $fetchAsync = document.getElementById("fetch-async"),
+        $fragment = document.createDocumentFragment();// El fragment permite que se haga una sola insersion al dom, asi mejoramos el rendimiento.Si no lo usáramos tocaria insertar cada elemente a medida que va llegando de la peticion.Encambia asi se va acumulando todo aqui.
+
+
+    async function getData() { // este async nos permite usar el await.
+        try {
+            let res = await fetch("https://jsonplaceholder.typicode.com/users"), // res es la respuesta de la peticion del fetch, con el await no permitimos que continue ejecutando codigo hasta que haya llegado la respuesta.
+                json = await res.json(); // aqui tambien puede ser .text() o .lo_que_estemos_esperando
+
+            console.log(res, json);
+
+            //if (!res.ok) throw new Error("Ocurrio un Error al solicitar los Datos"); // Este objeto de error solo recibe mensajes textuales
+            if (!res.ok) throw { status: res.status, statusText: res.statusText };//! Así manipulo el error. El throw es un return que manda el flujo a nuestro catch, en este caso no podemos rechazar la promesa con el reject.
+
+            json.forEach((el) => {
+                const $li = document.createElement("li");
+                $li.innerHTML = `${el.name} -- ${el.email} -- ${el.phone}`;
+                $fragment.appendChild($li);
+            });
+
+            $fetchAsync.appendChild($fragment);
+        } catch (err) {
+            console.log(err);
+            let message = err.statusText || "Ocurrió un error"; // por si el mensaje del status text viene vacio.
+            $fetchAsync.innerHTML = `Error ${err.status}: ${message}`;
+        } finally {
+            console.log("Esto se ejecutará independientemente del try... catch. API Fetch + Asinc-Await");
+        }
+    }
+
+    getData();
+})();
+
+// * AXIOS trabaja con promesas, tiene todos los verbos http.
+
+/* la ventaja de axios es que simplifica el código ya que entrega parseado el 
+resultado, ademas hace previamente las validaciones de las promesas, usa el XMLHttpRequest
+como si fuera un fetch ya que usa promesas.
+para poder usar esta libreria en el script tenemos que tener el src=https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js
+o la que este mas actualizada en la libreria de gitHub https://github.com/axios/axios
+*/
+(() => {
+    const $axios = document.getElementById("axios"),
+        $fragment = document.createDocumentFragment();
+
+    axios
+        //.get("assets/users.json")  // podemos llamar archivos internos
+        .get("https://jsonplaceholder.typicode.com/users")  // esta es la url que vamos a consultar con metodo  get.
+        .then((res) => { // podemos usar los metodos de las promesas then, catch , finally
+            console.log(res); // Entrega el objeto ya parseado en data
+            let json = res.data;
+
+            json.forEach((el) => {
+                const $li = document.createElement("li");
+                $li.innerHTML = `${el.name} -- ${el.email} -- ${el.phone}`;
+                $fragment.appendChild($li);
+            });
+
+            $axios.appendChild($fragment);
+        })
+        .catch((err) => {
+            console.log(err.response); // axios pone el elemento response en el error para mostrar el objeto.
+            let message = err.response.statusText || "Ocurrió un error";
+            $axios.innerHTML = `Error ${err.response.status}: ${message}`;
+        })
+        .finally(() => {
+            console.log("Esto se ejecutará independientemente del resultado Axios");
+        });
+})();
+
+
+// * Librería Axios + (Async - Await)
+/*
+Aqui usamos funciones asincronas, y esperamos con await la respuesta get
+*/
+
+(() => {
+    const $axiosAsync = document.getElementById("axios-async"),
+        $fragment = document.createDocumentFragment();
+
+    async function getData() {
+        try {
+            let res = await axios.get("https://jsonplaceholder.typicode.com/users"),
+                json = await res.data;
+
+            console.log(res, json);
+
+            json.forEach((el) => {
+                const $li = document.createElement("li");
+                $li.innerHTML = `${el.name} -- ${el.email} -- ${el.phone}`;
+                $fragment.appendChild($li);
+            });
+
+            $axiosAsync.appendChild($fragment);
+        } catch (err) {
+            console.log(err.response);
+            let message = err.response.statusText || "Ocurrió un error";
+            $axiosAsync.innerHTML = `Error ${err.response.status}: ${message}`;
+        } finally {
+            console.log("Esto se ejecutará independientemente del try... catch");
+        }
+    }
+
+    getData();
 })();
