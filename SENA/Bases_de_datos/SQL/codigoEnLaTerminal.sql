@@ -1,6 +1,6 @@
 -- ¿ este codigo va en la terminal de cmd
 -- link del video. https://www.youtube.com/watch?v=U-0SbQgnnGU&list=PLCTD_CpMeEKQmH9cRKWWHahygZFtIdwYG&index=30
-
+--  link de la documentacion https://dev.mysql.com/doc/refman/8.0/en/create-table.html
 
 -- * RESPALDAR BASES DE DATOS 
 -- Generando el archivo de respaldo de la base de datos completa.

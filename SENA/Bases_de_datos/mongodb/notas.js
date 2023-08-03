@@ -3,6 +3,7 @@
 // Primero abrir mongod, y luego mongosh. En mongosh  es donde se ejecutarán los comandos.cuando haga coneccion debo dar un enter en el shell o terminal cmd de mongod.exe para que pueda conectarse
 
 //hay que refrescar para que muestre los cambios agregados en las bases de datos.
+se cierra con ctrl + c
 // ! MONGO FUNCIONA CON JAVASCRIPT, POR LO QUE PUEDO USAR TODAS LAS CARACTERISTICAS DE ESTE.
 
 

@@ -1,6 +1,6 @@
 -- ¿CURSO MYSQL PROGRAMADOR NOVATO:
 
-
+-- link de la documentacion https://dev.mysql.com/doc/refman/8.0/en/create-table.html
 
 https://www.youtube.com/watch?v=VUoEyBGQnVE&list=PLCTD_CpMeEKQmH9cRKWWHahygZFtIdwYG&index=15
 

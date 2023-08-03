@@ -1,4 +1,5 @@
 -- create database prueba;
+-- link de la documentacion https://dev.mysql.com/doc/refman/8.0/en/create-table.html
 /* use prueba;
 drop database prueba;
 create database prueba character set utf8mb4 collate utf8mb4_spanish_ci;

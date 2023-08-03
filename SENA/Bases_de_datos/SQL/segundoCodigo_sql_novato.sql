@@ -1,3 +1,5 @@
+-- link de la documentacion https://dev.mysql.com/doc/refman/8.0/en/create-table.html
+
 use escuela;
 select * from salon;
 truncate table salon; -- la llave foranea impide hacer el truncate
