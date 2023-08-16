@@ -301,3 +301,35 @@ int ventas;
 // 3
 // EL controlador
 // Recoge los datos de entrada que envía el usuario, realiza la solicitud de acciones al modelo y modera la vista.
+
+// *HIBERNATE
+
+// Hibernate utiliza JDBC para todos los procesos de comunicación con la base de datos funcionando como una capa adicional de abstracción de las funcionalidades del JDBC. En una aplicación JAVA podremos delegar la mayoría de las operaciones de bases de datos al framework de Hibernate pero en segundo plano todo estará pasando por la API de JDBC.
+
+////Propiedad	Definición
+// connection.driver.class	Parte de la configuración del JDBC donde se define el driver a usar.
+
+// connection.url	Parte de la configuración del JDBC donde se define la url de la base de datos a utilizar (protocolo: url base de datos: puerto / nombre DB).
+
+// connection.username	Parte de la configuración del JDBC donde se define el usuario de la base de datos a utilizar en la conexión.
+
+// connection.password	Parte de la configuración del JDBC donde se define el password del usuario de la base de datos a utilizar en la conexión.
+
+// connection.pool_size	Número de conexiones simultáneas al JDBC.
+
+// dialect	Aunque SQL es un estándar, cada motor de bases de datos tiene una implementación particular. En esta propiedad se especifica el dialecto a utilizar por Hibernate.
+
+// show_sql	Esta propiedad permite ver en la salida estándar las sentencias SQL que ejecuta en background Hibernate lo cual sirve mucho para entender lo que está sucediendo en entornos de desarrollo.
+
+// current_session_context_class	Especifica el contexto de la sesión actual, por defecto se puede asignar thread.
+
+
+////Anotación	Significado
+// @Entity	Especifica que la clase definida en una Entity Class.
+
+// @Table(name = “ ”)	Permite especificar que la clase será mapeada con una tabla en la base de datos especificada en la propiedad name.
+
+// @Column(name = “ ”)	Permite especificar que el atributo por ser definido será mapeado con una columna especificada por la propiedad name. Cuando el nombre del atributo coincide con el nombre de la columna en la tabla se puede omitir la especificación de la propiedad name y solo dejar la anotación @Column.
+
+// @Id	Permite especificar que el atributo a definir corresponde con el identificador primario a ser mapeado en la tabla.
+
